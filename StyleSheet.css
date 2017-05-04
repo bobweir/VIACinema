@@ -1,0 +1,83 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: "PT Sans" !important;
+}
+
+#logo {
+    padding: 2em;   
+    display: flex;
+    width: 10%;
+    height: 10%;
+}
+
+#login {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 3em;
+    background: white;
+    width: 100%;
+    justify-content: center; /* align horizontal */   
+    align-items: center; /* align vertical */
+    margin: 0;
+    padding: 0;
+}
+
+#LoginView1_LoginStatus1, #LoginView1_LoginStatus2 {
+    right: 0;
+    position: fixed;
+    margin: 1em;
+    text-decoration: none;
+}
+
+#LoginView1_LoginStatus1:hover, #LoginView1_LoginStatus2:hover {
+    -webkit-transition: color .3s ease-in;   
+    -moz-transition: color .3s ease-in;   
+    -o-transition: color .3s ease-in;   
+    transition: color .3s ease-in;
+}
+
+#drawing_canvas {
+    margin: auto;
+    width: 512px;
+    height: 350px;
+    margin-top: -100px;
+}
+
+#header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    top: 0;
+}
+
+#login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* align horizontal */   
+    align-items: center; /* align vertical */
+}
+
+#login-1, #wizard-1{
+    padding: 2em 0 2em 0;
+    max-width: 20%;
+}
+
+#LoginView1_LoginName1 {
+    padding-left: 5px;
+}
+
+.login-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 1em;
+}
+
+#ContentPlaceHolder1_Login1_LoginButton, #ContentPlaceHolder1_CreateUserWizard1___CustomNav0_StepNextButtonButton {
+    width: 100%;
+}

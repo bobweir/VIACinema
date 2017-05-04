@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <a href="Home.aspx">
+    <asp:Image ID="logo" ImageUrl="" runat="server" />
+    </a>
+
+    <form id="form1" runat="server">
+
+        <div id="login">
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    Welcome: Guest! Please log in.<asp:LoginStatus ID="LoginStatus1" runat="server" />
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    Welcome:
+                    <asp:LoginName ID="LoginName1" runat="server" />
+                    !
+              <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutPageUrl="Home.aspx" LogoutAction="Redirect" />
+                </LoggedInTemplate>
+            </asp:LoginView>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+     <script src="./JS/party.js"></script> 
+</body>
+</html>
