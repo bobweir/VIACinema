@@ -1,4 +1,6 @@
 ﻿body {
+    background-color: black !important;
+    color: white !important;
     margin: 0;
     padding: 0;
 }
@@ -9,43 +11,71 @@
 
 #logo {
     padding: 2em;   
-    display: flex;
     width: 10%;
     height: 10%;
+    margin: 0 auto;
+}
+
+#logo-div {
+    text-align: center;
+    width: 100%;
+    height: auto;
 }
 
 #login {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
     flex-direction: row;
     flex: 1;
     height: 3em;
     background: white;
     width: 100%;
+    color: black;
     justify-content: center; /* align horizontal */   
     align-items: center; /* align vertical */
     margin: 0;
     padding: 0;
 }
 
-#LoginView1_LoginStatus1, #LoginView1_LoginStatus2 {
-    right: 0;
-    position: fixed;
-    margin: 1em;
+#login #LoginView2_UserMenu > ul li a, #login #LoginView2_AdminMenu > ul li a {
     text-decoration: none;
+    color: #009688;
+    margin: 0.5em;
 }
 
-#LoginView1_LoginStatus1:hover, #LoginView1_LoginStatus2:hover {
+#login #LoginView2_UserMenu > ul:first-child li:first-child a , #login #LoginView2_AdminMenu > ul:first-child li:first-child a{
+    padding: 0;
+    border: none;
+}
+
+#login #LoginView2_UserMenu  ul li a:hover, #login #LoginView2_AdminMenu > ul li a:hover {
+    color: #f44336;
     -webkit-transition: color .3s ease-in;   
     -moz-transition: color .3s ease-in;   
     -o-transition: color .3s ease-in;   
     transition: color .3s ease-in;
 }
 
-#drawing_canvas {
-    margin: auto;
-    width: 512px;
-    height: 350px;
-    margin-top: -100px;
+#LoginView1_LoginStatus1, #LoginView1_LoginStatus2 {
+    right: 1em;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+}
+
+#LoginView1_LoginStatus1:hover, #LoginView1_LoginStatus2:hover {
+    color: #f44336;
+    -webkit-transition: color .3s ease-in;   
+    -moz-transition: color .3s ease-in;   
+    -o-transition: color .3s ease-in;   
+    transition: color .3s ease-in;
 }
 
 #header {
@@ -64,7 +94,7 @@
 
 #login-1, #wizard-1{
     padding: 2em 0 2em 0;
-    max-width: 20%;
+    width: 20%;
 }
 
 #LoginView1_LoginName1 {
@@ -78,6 +108,90 @@
     padding-bottom: 1em;
 }
 
-#ContentPlaceHolder1_Login1_LoginButton, #ContentPlaceHolder1_CreateUserWizard1___CustomNav0_StepNextButtonButton {
+#ContentPlaceHolder1_LoginViewLogin_Login1_LoginButton, #ContentPlaceHolder1_LoginViewLogin_CreateUserWizard1___CustomNav0_StepNextButtonButton {
     width: 100%;
+}
+
+#ContentPlaceHolder1_LoginViewLogin_Login1, #ContentPlaceHolder1_LoginViewLogin_CreateUserWizard1 {
+    margin: auto;
+}
+
+
+.pages-ribbon {
+    text-align: center;
+    background: #f44336;
+    background: -moz-linear-gradient(left,  #f44336 0%, #9c27b0 25%, #3f51b5 50%, #03a9f4 75%, #009688 100%);
+    background: -webkit-linear-gradient(left,  #f44336 0%,#9c27b0 25%,#3f51b5 50%,#03a9f4 75%,#009688 100%);
+    background: linear-gradient(to right,  #f44336 0%,#9c27b0 25%,#3f51b5 50%,#03a9f4 75%,#009688 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f44336', endColorstr='#009688',GradientType=1 );
+
+}
+
+.event-display {
+    color: white;
+    border-bottom: 1px solid #009688;
+    border-top: 1px solid #009688;
+    padding: 1em 0 1em 3em;
+    margin-bottom: 2em;
+}
+
+#events-title {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+#ContentPlaceHolder1_Login1, #ContentPlaceHolder1_CreateUserWizard1, 
+#ContentPlaceHolder1_Login1 table, #ContentPlaceHolder1_CreateUserWizard1 table,
+#ContentPlaceHolder1_CreateUserWizard1_CompleteStepContainer_ContinueButtonButton {
+    width: 100%;
+}
+
+#create-event {
+    background-color: none;
+    text-align: center;
+}
+
+#ContentPlaceHolder1_btnCreate {
+    width: 20%;
+    margin-top: 2em;
+}
+
+#ContentPlaceHolder1_CldrDate {
+    border: none;
+    width: 20%;
+    margin: auto;
+}
+
+#ContentPlaceHolder1_CldrDate a {
+    text-decoration: none;
+}
+
+.selected-day {
+    background-color: #009688 !important;
+}
+
+#ContentPlaceHolder1_txtName, #ContentPlaceHolder1_txtPlace, #ContentPlaceHolder1_txtDescription {
+    width: 20%;
+}
+
+
+#ContentPlaceHolder1_lblInformation {
+    color: #9c27b0;
+    width: 100%;
+    display: inline-block;
+    margin-top: 2em;
+    text-align: center;
+}
+
+#ContentPlaceHolder1_MyEventsListView_itemPlaceholderContainer {
+    padding: 0;
+    margin: 0;
+}
+
+.info {
+    padding-top: 0.5em;
+    color: #9c27b0;
+    width: 100%;
+    text-align: center;
 }

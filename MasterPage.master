@@ -4,30 +4,55 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>VIA Cinema</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT+Sans" />
 
 </head>
 <body>
-    <a href="Home.aspx">
-    <asp:Image ID="logo" ImageUrl="" runat="server" />
-    </a>
+    <div id="logo-div">
+        <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Home.aspx" runat="server">
+        <asp:Image ID="logo" ImageUrl="~/Images/icon.png" runat="server" />
+        </asp:HyperLink>
+    </div>
+
+    <asp:SiteMapDataSource ID="UserSiteMap" runat="server" SiteMapProvider="UserSiteMap"/>
+    <asp:SiteMapDataSource ID="AdminSiteMap" runat="server" SiteMapProvider="AdminSiteMap"/>
 
     <form id="form1" runat="server">
 
         <div id="login">
             <asp:LoginView ID="LoginView1" runat="server">
                 <AnonymousTemplate>
-                    Welcome: Guest! Please log in.<asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    <span>Welcome, guest! Please log in.<asp:LoginStatus ID="LoginStatus1" runat="server" /></span>
                 </AnonymousTemplate>
-                <LoggedInTemplate>
-                    Welcome:
-                    <asp:LoginName ID="LoginName1" runat="server" />
-                    !
-              <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutPageUrl="Home.aspx" LogoutAction="Redirect" />
-                </LoggedInTemplate>
+               
+                     <LoggedInTemplate>
+                         <span>Welcome, <asp:LoginName ID="LoginName1" runat="server" />! </span>
+                         <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutPageUrl="Home.aspx" LogoutAction="Redirect" />
+                    </LoggedInTemplate>
+           </asp:LoginView>
+
+            <asp:LoginView ID="LoginView2" runat="server">
+                <RoleGroups>
+                <asp:RoleGroup Roles="User">
+                        <ContentTemplate>
+                        <asp:Menu ID="UserMenu" Runat="server" DataSourceID="UserSiteMap" Orientation="Horizontal" StaticDisplayLevels="2">
+                        </asp:Menu>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+
+                    <asp:RoleGroup Roles="Admin">
+                        <ContentTemplate>
+                        <asp:Menu ID="AdminMenu" Runat="server" DataSourceID="AdminSiteMap" Orientation="Horizontal" StaticDisplayLevels="4">
+                        </asp:Menu>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                  </RoleGroups>
             </asp:LoginView>
+
         </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -35,6 +60,5 @@
         </div>
     </form>
 
-     <script src="./JS/party.js"></script> 
 </body>
 </html>

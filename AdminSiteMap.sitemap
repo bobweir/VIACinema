@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title=""  description="">
+      <siteMapNode url="~/Home.aspx" title="Home"  description="Get back to home page" />
+      <siteMapNode url="~/Admin/ManageMovies.aspx" title="Manage movies"  description="Delete or edit all the events" />
+      <siteMapNode url="~/Admin/EditUser.aspx" title="Manage users"  description="Delete or edit all the users" />
+    </siteMapNode>
+</siteMap>
