@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Party Life Manager" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
+﻿<%@ Page Title="VIA Cinema" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -16,7 +16,7 @@
 
     <h2 id="events-title">Movies</h2>
 
-    <asp:ListView runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged">
+    <asp:ListView runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged"> 
         <EmptyDataTemplate>
            <div class="info">
                 No Movies to show!
@@ -44,7 +44,8 @@
                     <asp:Label ID="ScreenLabel" runat="server" Text='<%# Eval("Screen") %>' />
                     <br />
                     <asp:Image ID="image" runat="server" ImageUrl='<%# Eval("Image").ToString() == "" ? "~/images/crooms/NoImage.png" : Eval("image") %>' AlternateText="Room Image"/>
-
+                    <br />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Screening for this movie" />
                     </div>
                 </span>
 
@@ -66,6 +67,6 @@
         </LayoutTemplate>
     </asp:ListView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name], [Genre],  [Description], [Date], [Time], [Screen], [MovieId], [Image] FROM [Movie]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [MovieId], [Name], [Genre], [Description], [Date], [Time], [Screen], [Image] FROM [Movie]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
 
 </asp:Content>
