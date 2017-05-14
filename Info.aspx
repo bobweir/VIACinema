@@ -12,13 +12,16 @@
         <br />
         <br />
         Send an email for questions:<p>
-            <asp:TextBox ID="TextBox1" runat="server" Width="184px"></asp:TextBox>
+            <asp:Label ID="Label1" runat="server" Text="Your Email Address:    "></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" Width="316px" style="margin-left: 50px" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        </p>
+        <asp:Label ID="Label3" runat="server" Text="Subject:   "></asp:Label>
+        <asp:TextBox ID="TextBox3" runat="server" Width="316px" style="margin-left: 130px"></asp:TextBox>
+        <p>
+            <asp:TextBox ID="TextBox2" runat="server" Height="142px" Width="504px" TextMode="MultiLine"></asp:TextBox>
         </p>
         <p>
-            <asp:TextBox ID="TextBox2" runat="server" Height="89px" Width="183px"></asp:TextBox>
-        </p>
-        <p>
-            <asp:Button ID="Button1" runat="server" Text="Send" />
+            <asp:Button ID="Button1" runat="server" Text="Send" OnClick="Button1_Click" />
         </p>
 
     <style>
