@@ -8,10 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [seatid] FROM [Seat] WHERE (([idshow] = @idshow) AND ([taken] = @taken))">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [seatid] FROM [Seat] WHERE (([taken] = @taken) AND ([idshow] = @idshow))">
             <SelectParameters>
-                <asp:Parameter DefaultValue="1" Name="idshow" Type="Int32" />
                 <asp:Parameter DefaultValue="false" Name="taken" Type="Boolean" />
+                <asp:Parameter DefaultValue="3" Name="idshow" Type="Int32" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:Label ID="Label3" runat="server" Text="Choose a place : "></asp:Label>
