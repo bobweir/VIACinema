@@ -43,7 +43,7 @@
                     <div style="color: #9c27b0; margin-left: -1em;">Screen:</div>
                     <asp:Label ID="ScreenLabel" runat="server" Text='<%# Eval("Screen") %>' />
                     <br />
-                    <asp:Image ID="image" width="150" runat="server" ImageUrl='<%# Eval("Image").ToString() == "" ? "~/images/crooms/NoImage.png" : Eval("image") %>' AlternateText="Room Image"/>
+                    <asp:Image ID="image" width="150" runat="server" ImageUrl='<%# Eval("Image").ToString() == "" ? "~/Images/NoImage.png" : Eval("image") %>' AlternateText="Room Image"/>
                     <br />
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Screening for this movie" />
                     </div>
