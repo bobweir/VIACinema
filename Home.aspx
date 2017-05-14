@@ -16,7 +16,7 @@
 
     <h2 id="events-title">Movies</h2>
 
-    <asp:ListView runat="server" DataSourceID="SqlDataSource1">
+    <asp:ListView runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="Unnamed1_SelectedIndexChanged">
         <EmptyDataTemplate>
            <div class="info">
                 No Movies to show!
