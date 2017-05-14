@@ -146,7 +146,7 @@ public partial class Home : System.Web.UI.Page
     {
        // if()
 
-        Response.Redirect("~/shows.aspx");
+        Response.Redirect("~/SeatAndPayment.aspx");
 
     }
 
