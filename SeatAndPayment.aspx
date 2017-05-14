@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SeatAndPayment.aspx.cs" Inherits="SeatAndPayement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeFile="SeatAndPayment.aspx.cs" Inherits="SeatAndPayement" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [seatid] FROM [Seat] WHERE (([taken] = @taken) AND ([idshow] = @idshow))">
             <SelectParameters>
                 <asp:Parameter DefaultValue="false" Name="taken" Type="Boolean" />
@@ -107,6 +101,5 @@
             &nbsp;</p>
         <p>
             &nbsp;</p>
-    </form>
-</body>
-</html>
+
+</asp:Content>
