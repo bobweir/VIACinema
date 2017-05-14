@@ -144,7 +144,14 @@ public partial class Home : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/SeatAndPayement.aspx");
+       // if()
+
+        Response.Redirect("~/shows.aspx");
+
+    }
+
+    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
 
     }
 }

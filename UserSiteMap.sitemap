@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title=""  description="">
-        <siteMapNode url="~/Home.aspx" title="Home"  description="Get back to home page" />
-        <siteMapNode url="~/User/CreateEvent.aspx" title="Create an event"  description="Create to new event" />
-        <siteMapNode url="~/User/MyEvents.aspx" title="My events"  description="See all of you events" />
-    </siteMapNode>
+  <siteMapNode url="" title=""  description="">
+    <siteMapNode url="~/Home.aspx" title="Home"  description="Get back to home page" />
+    <siteMapNode url="~/User/CreateEvent.aspx" title="Info"  description="Contact information to the cinema" />
+    <siteMapNode url="~/User/MyEvents.aspx" title="Movie List"  description="List of all the upcoming movies" />
+  </siteMapNode>
 </siteMap>

@@ -24,13 +24,10 @@
 
 #login {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-align: center;
     -ms-flex-align: center;
-    -webkit-align-items: center;
     align-items: center;
     flex-direction: row;
     flex: 1;
@@ -133,6 +130,7 @@
     border-top: 1px solid #009688;
     padding: 1em 0 1em 3em;
     margin-bottom: 2em;
+    text-align: center;
 }
 
 #events-title {

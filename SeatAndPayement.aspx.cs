@@ -33,10 +33,13 @@ public partial class SeatAndPayement : System.Web.UI.Page
                 DropDownList4.Items.Add(i + "");
             }
         }
-        DropDownList3.Items.Add("MASTERCARD");
-        DropDownList3.Items.Add("VISA");
-        DropDownList3.Items.Add("AMEX");
-        DropDownList3.Items.Add("DINERS");
+        if (DropDownList3.SelectedItem == null)
+        {
+            DropDownList3.Items.Add("MASTERCARD");
+            DropDownList3.Items.Add("VISA");
+            DropDownList3.Items.Add("AMEX");
+            DropDownList3.Items.Add("DINERS");
+        }
     }
 
     protected void Button2_Click1(object sender, EventArgs e)
