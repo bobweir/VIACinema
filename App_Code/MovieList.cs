@@ -24,42 +24,26 @@ public class MovieList : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public List<String> ShowMovies()
+    public DataTable ShowMovies()
     {
-        List<String> movieList = new List<String>();
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\ASPNETDB.MDF;Integrated Security=True");
-        String sql = "SELECT Name FROM Movie";
-        try
+
+        using (SqlConnection co = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\ASPNETDB.MDF;Integrated Security=True"))
         {
-            
-            SqlCommand cmd = new SqlCommand(sql, con);
-            con.Open();
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            da.Fill(table);
-
-            foreach(DataRow row in table.Rows)
+            using (SqlCommand cmd = new SqlCommand("SELECT Name, Genre, Description FROM Movie"))
             {
-                movieList.Add(row.Field<String>(0));
-                
+                using (SqlDataAdapter da = new SqlDataAdapter())
+                {
+                    cmd.Connection = co;
+                    da.SelectCommand = cmd;
+                    using (DataTable table = new DataTable())
+                    {
+                        table.TableName = "Movies";
+                        da.Fill(table);
+                        return table;
+                    }
+
+                }
             }
-
         }
-        catch (System.Data.SqlClient.SqlException ex)
-        {
-            string error = "Error";
-            error += ex.Message;
-            throw new Exception(error);
-        }
-        finally
-        {
-            con.Close();
-        }
-        return movieList;
     }
-
 }

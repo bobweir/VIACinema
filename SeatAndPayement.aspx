@@ -8,9 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [seatid] FROM [Seat] WHERE (([roomidSeat] = @roomidSeat) AND ([taken] = @taken))">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [seatid] FROM [Seat] WHERE (([idshow] = @idshow) AND ([taken] = @taken))">
             <SelectParameters>
-                <asp:Parameter DefaultValue="1" Name="roomidSeat" Type="Int32" />
+                <asp:Parameter DefaultValue="1" Name="idshow" Type="Int32" />
                 <asp:Parameter DefaultValue="false" Name="taken" Type="Boolean" />
             </SelectParameters>
         </asp:SqlDataSource>
@@ -21,12 +21,12 @@
         <div>
             Current available seats :<asp:ListView ID="ListView1" runat="server" DataKeyNames="seatid" DataSourceID="SqlDataSource2" GroupItemCount="3">
                 <AlternatingItemTemplate>
-                    <td runat="server" style="">seatid:
+                    <td runat="server" style="background-color:#FFF8DC;">seatid:
                         <asp:Label ID="seatidLabel" runat="server" Text='<%# Eval("seatid") %>' />
                         <br /></td>
                 </AlternatingItemTemplate>
                 <EditItemTemplate>
-                    <td runat="server" style="">seatid:
+                    <td runat="server" style="background-color:#008A8C;color: #FFFFFF;">seatid:
                         <asp:Label ID="seatidLabel1" runat="server" Text='<%# Eval("seatid") %>' />
                         <br />
                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
@@ -35,7 +35,7 @@
                         <br /></td>
                 </EditItemTemplate>
                 <EmptyDataTemplate>
-                    <table runat="server" style="">
+                    <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                         <tr>
                             <td>No data was returned.</td>
                         </tr>
@@ -57,7 +57,7 @@
                         <br /></td>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <td runat="server" style="">seatid:
+                    <td runat="server" style="background-color:#DCDCDC;color: #000000;">seatid:
                         <asp:Label ID="seatidLabel" runat="server" Text='<%# Eval("seatid") %>' />
                         <br /></td>
                 </ItemTemplate>
@@ -65,19 +65,19 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                                     <tr id="groupPlaceholder" runat="server">
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                         <tr runat="server">
-                            <td runat="server" style=""></td>
+                            <td runat="server" style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;"></td>
                         </tr>
                     </table>
                 </LayoutTemplate>
                 <SelectedItemTemplate>
-                    <td runat="server" style="">seatid:
+                    <td runat="server" style="background-color:#008A8C;font-weight: bold;color: #FFFFFF;">seatid:
                         <asp:Label ID="seatidLabel" runat="server" Text='<%# Eval("seatid") %>' />
                         <br /></td>
                 </SelectedItemTemplate>
