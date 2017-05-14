@@ -1,13 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Info.aspx.cs" Inherits="Info" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Info.aspx.cs" Inherits="Info"%>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
     <div>
     
         Address: Kollegievaenget 22</div>
@@ -25,7 +20,6 @@
         <p>
             <asp:Button ID="Button1" runat="server" Text="Send" />
         </p>
-    </form>
 
     <style>
        #map {
@@ -54,5 +48,5 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYjs-ajLTxQiit9LB5A01qoHQNmGt1c7I&callback=initMap">
     </script>
 
-</body>
-</html>
+
+</asp:Content>
