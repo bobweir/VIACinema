@@ -40,7 +40,7 @@ public partial class SeatChooser : System.Web.UI.Page
             con.Close();
         }
 
-        Response.Redirect("~/SeatChooser.aspx");
+        Response.Redirect("~/SeatChooser.aspx"); // To change -> Need to go on payment page. If Payment is aborded seat is still taken
         
 
     }
