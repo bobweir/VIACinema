@@ -16,7 +16,11 @@
 
     <h2 id="events-title">Movies</h2>
 
+<<<<<<< Updated upstream
     <asp:ListView runat="server" DataSourceID="SqlDataSource1"> 
+=======
+    <asp:ListView runat="server" DataSourceID="SqlDataSource1" > 
+>>>>>>> Stashed changes
         <EmptyDataTemplate>
            <div class="info">
                 No Movies to show!
@@ -38,10 +42,11 @@
                     <asp:Label ID="DateLabel" runat="server" Text='<%# Eval("Date") %>' />
                     <br />
                     <div style="color: #9c27b0; margin-left: -1em;">Time:</div>
-                    <asp:Label ID="TimeLabel" runat="server" Text='<%# Eval("Time") %>' />
+                    <asp:Label ID="TimeLabel" runat="server" Text='<%# Eval("airingtime") %>' />
                     <br />
                     <div style="color: #9c27b0; margin-left: -1em;">Screen:</div>
                     <asp:Label ID="ScreenLabel" runat="server" Text='<%# Eval("Screen") %>' />
+                    <asp:Label ID="ShowLabel" Visible="false" runat="server" Text='<%# Eval("showId") %>' />
                     <br />
                     <asp:Image ID="image" width="150" runat="server" ImageUrl='<%# Eval("Image").ToString() == "" ? "~/Images/NoImage.png" : Eval("image") %>' AlternateText="Room Image"/>
                     <br />
@@ -67,6 +72,6 @@
         </LayoutTemplate>
     </asp:ListView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [MovieId], [Name], [Genre], [Description], [Date], [Time], [Screen], [Image] FROM [Movie]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [MovieId], [Name], [Genre], [Description], [Date], [Time], [Screen], [Image], s.[showId], s.[movieIdShow], s.[airingtime] FROM [Movie] RIGHT JOIN [Show] s ON MovieId = movieIdShow " OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
 
 </asp:Content>
