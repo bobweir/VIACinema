@@ -15,12 +15,7 @@
     </asp:LoginView>
 
     <h2 id="events-title">Movies</h2>
-
-<<<<<<< Updated upstream
     <asp:ListView runat="server" DataSourceID="SqlDataSource1"> 
-=======
-    <asp:ListView runat="server" DataSourceID="SqlDataSource1" > 
->>>>>>> Stashed changes
         <EmptyDataTemplate>
            <div class="info">
                 No Movies to show!
